@@ -1,0 +1,89 @@
+main:
+  - title       : "Schedule"
+    url         : /schedule/
+  - title       : "Academics"
+    url         : /academics/
+  - title       : "Research"
+    url         : /research/
+  - title       : "Lab"
+    url         : /eel/
+
+academics:
+  - title: Teaching
+    children:
+      - title: "Courses"
+        url: /academics/
+      - title: "Philosophy"
+        url: /academics/teaching-philosophy/
+
+  - title: Senior Projects
+    children:
+      - title: "Current Projects"
+        url: /academics/senior-projects/
+      - title: "Projects Archive"
+        url: /academics/senior-projects-archive/
+      - title: "Planning"
+        url: /academics/senior-projects-planning/
+
+  - title: Masters Degree
+    children:
+      - title: "Current Projects"
+        url: /academics/ms/
+      - title: "Projects Archive"
+        url: /academics/ms-archive/
+      - title: "Planning"
+        url: /academics/ms-planning/
+
+research:
+  - title: Satement
+    children:
+      - title: "Overview"
+        url: /research/
+      - title: "Philosophy"
+        url: /research/philosophy/
+
+  - title: Topics
+    children:
+      - title: "Machine Learning in EM"
+        url: /research/ml-in-em/
+      - title: "Nonlinear FSS"
+        url: /research/nl-fss/
+      - title: "Vortex Beams"
+        url: /research/vortex-beams/
+      - title: "Metasurfaces"
+        url: /research/metasurfaces/
+      - title: "Radiation and Scattering"
+        url: /research/scattering/
+      - title: "Localized Waves"
+        url: /research/localized-waves/
+
+  - title: Publications
+    children:
+      - title: "Recent"
+        url: /research/publications-recent/
+      - title: "Full List"
+        url: /research/publications/
+
+lab:
+  - title: About
+    children:
+      - title: "Overview"
+        url: /eel/
+      - title: "Lab Capabilities"
+        url: /eel/about-capabilities/
+  - title: Members
+    children:
+      - title: "Current"
+        url: /eel/team-current/
+      - title: "Alumni"
+        url: /eel/team-alumni/
+  - title: Activities
+    children:
+      - title: "Q-MARGIN Challenge"
+        url: /eel/q-margin/
+      - title: "Blueprints Workshops"
+        url: /eel/blueprints/
+      - title: "Heelium Explorations"
+        url: /eel/heelium/
+      - title: "Amateur Radio Club"
+        url: /eel/ssu-ham/

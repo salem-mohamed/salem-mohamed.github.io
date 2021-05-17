@@ -1,0 +1,156 @@
+$sp-4: 1rem !default;
+$sp-3: 1rem !default;
+$sp-2: 1rem !default;
+$sp-1: 1rem !default;
+$gutter-spacing-sm: 1rem !default;
+
+@mixin abstract-card() {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 14px rgba(0, 0, 0, 0.05);
+  margin: $sp-4 (-$gutter-spacing-sm);
+
+  @include mq(md) {
+    border-radius: $border-radius;
+    margin: $sp-4 0;
+  }
+}
+
+%card {
+  @include abstract-card();
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0 $sp-4;
+  position: relative;
+  word-wrap: break-word;
+
+  >:first-child {
+    border-top: none !important;
+  }
+
+  >:last-child {
+    border-bottom: none !important;
+  }
+
+  .label {
+    border-radius: $border-radius;
+    margin-left: 0;
+    user-select: none;
+  }
+}
+
+
+.schedule {
+  @include abstract-card();
+  overflow-x: scroll;
+  position: relative;
+
+  li::before {
+    display: none;
+  }
+
+  ul.schedule-timeline,
+  ul.schedule-group,
+  ul.schedule-events {
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  ul.schedule-timeline {
+    margin: 40px auto 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .schedule-time {
+    font-family: $global-font-family;
+	font-size: $type-size-7;
+    color: $dark-gray;
+    height: 40px;
+    margin: 0;
+    padding: 0.5rem;
+    position: relative;
+
+    &::after {
+      background-color: $border-color;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .schedule-group {
+    display: flex;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .schedule-day {
+    border-left: 1px solid $border-color;
+    flex: 1 0 0;
+    margin: 0;
+	list-style-type: none;
+    min-width: 120px;
+
+    &:first-of-type {
+      border-left: 0;
+    }
+  }
+
+  h2.schedule-header {
+    align-items: center;
+    display: flex;
+    font-size: $h-size-6;
+    height: 40px;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .schedule-events {
+    display: flex;
+    padding: 0;
+    position: relative;
+  }
+
+  .schedule-event {
+    background-color: $dark-gray;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    color: $lighter-gray;
+    float: left;
+    height: 100%;
+    margin: 0;
+    padding: 0 1rem;
+    position: absolute;
+    width: 100%;
+	list-style-type: none;
+
+    .name {
+	  font-family: $global-font-family;
+      font-size: $type-size-8;
+	  font-weight: bold;
+	  color: $darker-gray;
+    }
+
+    .time,
+    .location {
+	  font-family: $global-font-family;
+      font-size: $type-size-8;
+	  color: $dark-gray;
+    }
+
+    &.busy {
+      background-color: mix($warning-color, $background-color, 50%);
+    }
+
+    &.class {
+      background-color: mix($background-color, $info-color, $notice-background-mix);
+    }
+
+    &.office-hours {
+      background-color: mix($success-color, $background-color, 50%);
+    }
+  }
+}
